@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <script src="browser.js" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>CRUD</title>
+</head>
+<body>
+<div class="table_block">
+    <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="form_block">
+    <form onsubmit="return false">
+        <div class="form-group">
+            <div class="form-group col-md-12">
+                    <label for="userId">ID</label>
+                <input type="text" class="form-control" id="userId" placeholder="Id">
+                    <label for="userName">User Name</label>
+                <input type="text" class="form-control" id="userName" placeholder="User Name">
+                    <label for="userLastName">Last Name</label>
+                <input type="text" class="form-control" id="userLastName" placeholder="Last Name">
+                    <label for="userAge">Age</label>
+                <input type="text" class="form-control" id="userAge" placeholder="Age">
+
+                    <label for="selectDataBase">Data Base</label>
+                <select class="custom-select col-md-12" id="selectDataBase">
+                    <option selected>Select Storage</option>
+                    <option value="Mock">Mock</option>
+                    <option value="JSON">JSON</option>
+                    <option value="MySQL">MySql</option>
+                    <option value="postgresql">PostgresQL</option>
+                    <option value="sqlite">SQLite</option>
+                    <option value="firebase">Firebase</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="sendJson(dataBase.value, 'create')">Add User</button>
+        <button class="btn btn-primary" onclick="sendJson(dataBase.value, 'update')">Update User</button>
+        <button class="btn btn-primary" onclick="sendJson(dataBase.value, 'delete')">Delete User</button>
+    </form>
+</div>
+
+</body>
+</html>
